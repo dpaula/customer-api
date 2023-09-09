@@ -11,7 +11,7 @@
 
     <groupId>com.lima</groupId>
     <artifactId>customer-api</artifactId>
-    <version>0.0.5</version>
+    <version>1.0.0</version>
     <name>customer-api</name>
     <description>customer-api</description>
 
