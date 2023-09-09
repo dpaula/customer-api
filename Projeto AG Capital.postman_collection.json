@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "270c3ffc-939a-4abf-ba36-03efbc52ab5b",
+		"name": "Projeto AG Capital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5954527"
+	},
+	"item": [
+		{
+			"name": "Customer-Project",
+			"item": [
+				{
+					"name": "CUSTOMER-API",
+					"item": [
+						{
+							"name": "Listar",
+							"item": [
+								{
+									"name": "Listar todos os clientes",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar todos os clientes por nome",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes?nome=fernando",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											],
+											"query": [
+												{
+													"key": "nome",
+													"value": "fernando"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar todos os clientes por email",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes?email=roberto",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "roberto"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar todos os clientes por nome e email",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes?nome=roberto&email=roberto.paula2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											],
+											"query": [
+												{
+													"key": "nome",
+													"value": "roberto"
+												},
+												{
+													"key": "email",
+													"value": "roberto.paula2"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Alterar",
+							"item": [
+								{
+									"name": "Alterar nome cliente",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 102,\n    \"nome\": \"Roberto de Paula Alterado\",\n    \"email\": \"roberto.paula2@gmail.com\",\n    \"ativo\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Alterar email cliente",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 102,\n    \"nome\": \"Roberto de Paula Alterado\",\n    \"email\": \"roberto.paula_alterado@gmail.com\",\n    \"ativo\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incluir",
+							"item": [
+								{
+									"name": "Incluir novo cliente",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"Roberto de Paula\",\n    \"email\": \"roberto.paula@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Incluir novo cliente com mesmo email (validar exception)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"Roberto de Paula\",\n    \"email\": \"roberto.paula@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Incluir novo cliente com nome vazio (validar exception)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"\",\n    \"email\": \"roberto.paula@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Incluir novo cliente com nome null (validar exception)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"roberto.paula@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Remover",
+							"item": [
+								{
+									"name": "Remover cliente",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Remover cliente não encontrado (validar exception)",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6060/v1/clientes/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6060",
+											"path": [
+												"v1",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PROJECT-API",
+					"item": [
+						{
+							"name": "Listar",
+							"item": [
+								{
+									"name": "Listar todos os projetos",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6083/v1/projetos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6083",
+											"path": [
+												"v1",
+												"projetos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar por nome",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6083/v1/projetos?nome=Projeto Cliente 2 10",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6083",
+											"path": [
+												"v1",
+												"projetos"
+											],
+											"query": [
+												{
+													"key": "nome",
+													"value": "Projeto Cliente 2 10"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Listar projeto por id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6070/v1/projetos/552",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6070",
+											"path": [
+												"v1",
+												"projetos",
+												"552"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incluir",
+							"item": [
+								{
+									"name": "Incluir novo projeto",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"Projeto Cliente 2 20\",\n    \"descricao\": \"O melhor projeto\",\n    \"idCliente\": \"2\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6083/v1/projetos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6083",
+											"path": [
+												"v1",
+												"projetos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Concluir atividade",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6083/v1/projetos/1/atividade/102/finalizar",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6083",
+											"path": [
+												"v1",
+												"projetos",
+												"1",
+												"atividade",
+												"102",
+												"finalizar"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Incluir atividade ao projeto",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"Criar Banco de Dados\",\n    \"obs\": \"Banco MSSQL\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6070/v1/projetos/1/atividade",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6070",
+											"path": [
+												"v1",
+												"projetos",
+												"1",
+												"atividade"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Alterar",
+							"item": [
+								{
+									"name": "Alterar projeto",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"2\",\n    \"nome\": \"Projeto Z\",\n    \"descricao\": \"Projeto alterado\",\n    \"status\": \"INICIADO\",\n    \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6083/v1/projetos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6083",
+											"path": [
+												"v1",
+												"projetos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Alterar Atividade",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nome\": \"Projeto Zf\",\n    \"obs\": \"Banco MSSQL 2\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6070/v1/projetos/1/atividade/102",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6070",
+											"path": [
+												"v1",
+												"projetos",
+												"1",
+												"atividade",
+												"102"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Remover",
+							"item": [
+								{
+									"name": "Remover projeto",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6070/v1/projetos/552",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6070",
+											"path": [
+												"v1",
+												"projetos",
+												"552"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -2,11 +2,12 @@ package com.lima.customerapi.controller;
 
 import com.lima.customerapi.entity.Customer;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 public record CustomerRequest(Integer id,
-                              String nome,
-                              String email,
+                              @NotEmpty String nome,
+                              @NotEmpty String email,
                               LocalDateTime dataInclusao,
                               LocalDateTime dataAlteracao,
                               boolean ativo) {
